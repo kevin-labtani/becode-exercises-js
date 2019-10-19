@@ -10,6 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-    // your code here
+  // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
+  const now = new Date();
+  let message = "Bonjour";
+  console.log(`Hours: ${now.getHours()}`);
+  console.log(typeof now.getHours()); //number
+  if (now.getHours() >= 18) {
+    message = "Bonsoir";
+  }
+  document.querySelector("#target").textContent = message;
 })();
