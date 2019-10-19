@@ -10,7 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.getElementById("run").addEventListener("click", () => {
-        // your code here
-    });
+  document.getElementById("run").addEventListener("click", () => {
+    let list = "";
+    for (let index = 1; index <= 21; index++) {
+      if (index % 2 == 0) {
+        let result = index * index;
+        list += `${index} squared is ${result}, `;
+      }
+    }
+    alert(list);
+  });
 })();

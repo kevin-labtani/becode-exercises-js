@@ -10,21 +10,33 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
+  // to get the value of an input: document.getElementById("element-id").value
 
-    document.getElementById("addition").addEventListener("click", () => {
-        // perform an addition
-    });
+  document.getElementById("addition").addEventListener("click", () => {
+    const a = document.querySelector("#op-one").value;
+    const b = document.querySelector("#op-two").value;
+    answer = parseInt(a) + parseInt(b);
+    alert(answer);
+  });
 
-    document.getElementById("substraction").addEventListener("click", () => {
-        // perform an substraction
-    });
+  document.getElementById("substraction").addEventListener("click", () => {
+    const a = document.querySelector("#op-one").value;
+    const b = document.querySelector("#op-two").value;
+    answer = parseInt(a) - parseInt(b);
+    alert(answer);
+  });
 
-    document.getElementById("multiplication").addEventListener("click", () => {
-        // perform an multiplication
-    });
+  document.getElementById("multiplication").addEventListener("click", () => {
+    const a = document.querySelector("#op-one").value;
+    const b = document.querySelector("#op-two").value;
+    answer = parseInt(a) * parseInt(b);
+    alert(answer);
+  });
 
-    document.getElementById("division").addEventListener("click", () => {
-        // perform an division
-    });
+  document.getElementById("division").addEventListener("click", () => {
+    const a = document.querySelector("#op-one").value;
+    const b = document.querySelector("#op-two").value;
+    answer = parseInt(a) / parseInt(b);
+    alert(answer);
+  });
 })();

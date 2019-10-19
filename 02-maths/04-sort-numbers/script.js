@@ -10,9 +10,16 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
+  // to get the value of an input: document.getElementById("element-id").value
 
-    document.getElementById("run").addEventListener("click", () => {
-        // your code here
-    });
+  document.getElementById("run").addEventListener("click", () => {
+    const numberString = document.querySelector("#numbers").value;
+    const sortedString = numberString
+      .split(",")
+      .sort((a, b) => {
+        return a - b;
+      })
+      .join(",");
+    alert(sortedString);
+  });
 })();

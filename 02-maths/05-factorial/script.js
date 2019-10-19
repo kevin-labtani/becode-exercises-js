@@ -10,9 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
+  // to get the value of an input: document.getElementById("element-id").value
 
-    document.getElementById("run").addEventListener("click", () => {
-        // your code here
-    });
+  document.getElementById("run").addEventListener("click", () => {
+    num = document.querySelector("#number").value;
+    function factorial(n) {
+      if (n === 0) {
+        return 1;
+      }
+      return n * factorial(n - 1);
+    }
+    if (num >= 1) {
+      alert(factorial(num));
+    } else {
+      alert("Enter a number >= 1");
+    }
+  });
 })();
