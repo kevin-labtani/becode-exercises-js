@@ -10,5 +10,10 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  answer = prompt("Voulez-vous du gâteaux?");
+  if (answer === "oui") {
+    alert("Félicitations!");
+  } else {
+    alert("du gâteau, ça ne se refuse pas !");
+  }
 })();

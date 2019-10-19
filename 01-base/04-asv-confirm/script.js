@@ -10,5 +10,16 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  finished = false;
+  while (!finished) {
+    let age = prompt("How old are you?");
+    let sex = prompt("What's your sex?");
+    let city = prompt("where do you live?");
+    let confirmation = confirm(
+      `You are ${age} years old, you sex is ${sex} and you live in ${city}`
+    );
+    if (confirmation) {
+      finished = true;
+    }
+  }
 })();
