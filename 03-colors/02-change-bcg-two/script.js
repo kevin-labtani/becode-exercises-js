@@ -10,5 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  let color = "";
+  document.querySelector("#color").addEventListener("change", function(e) {
+    color = e.target.value;
+  });
+  document.querySelector("button").addEventListener("click", function(e) {
+    document.body.style.backgroundColor = color;
+  });
 })();

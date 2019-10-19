@@ -10,5 +10,28 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  let color = "";
+  document.querySelectorAll("button").forEach(function(button) {
+    button.addEventListener("click", function(e) {
+      color = e.target.textContent;
+      console.log(color);
+      switch (color) {
+        case "Rouge":
+          document.body.style.background = "red";
+          break;
+        case "Vert":
+          document.body.style.background = "green";
+
+          break;
+        case "Jaune":
+          document.body.style.background = "yellow";
+
+          break;
+        case "Bleu":
+          document.body.style.background = "blue";
+
+          break;
+      }
+    });
+  });
 })();

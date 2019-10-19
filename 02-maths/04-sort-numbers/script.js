@@ -16,9 +16,7 @@
     const numberString = document.querySelector("#numbers").value;
     const sortedString = numberString
       .split(",")
-      .sort((a, b) => {
-        return a - b;
-      })
+      .sort((a, b) => a - b)
       .join(",");
     alert(sortedString);
   });

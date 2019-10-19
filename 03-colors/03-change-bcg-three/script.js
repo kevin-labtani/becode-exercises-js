@@ -10,5 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // random generator stolen from stackoverflow
+  // toString(16) turns the number into an hexadecimal value
+  //  16777215 in decimal = FFFFFF in hex
+  let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  document.querySelector("button").addEventListener("click", function(e) {
+    document.body.style.backgroundColor = color;
+  });
 })();
