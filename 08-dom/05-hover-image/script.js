@@ -16,9 +16,4 @@
   document.querySelector("img").addEventListener("mouseover", function(e) {
     e.target.src = imageSource;
   });
-  // const newImage = document.createElement("img");
-  // newImage.src = imageSource;
-  // // console.log(newImage);
-  // document.querySelector("#target").appendChild(newImage);
-  // document.querySelector("#source").remove();
 })();
