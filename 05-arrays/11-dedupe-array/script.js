@@ -10,22 +10,27 @@
 // You will have time to focus on it later.
 
 (() => {
-    const fruits = [
-        "cerise",
-        "durian",
-        "pomme",
-        "poire",
-        "fraise",
-        "tomate",
-        "orange",
-        "mandarine",
-        "fraise",
-        "durian",
-        "pêche",
-        "cerise",
-        "raisin",
-        "cerise",
-    ];
+  const fruits = [
+    "cerise",
+    "durian",
+    "pomme",
+    "poire",
+    "fraise",
+    "tomate",
+    "orange",
+    "mandarine",
+    "fraise",
+    "durian",
+    "pêche",
+    "cerise",
+    "raisin",
+    "cerise"
+  ];
 
-    // your code here
+  document.querySelector("button").addEventListener("click", function(e) {
+    fruitset = new Set(fruits);
+    dedupedArray = Array.from(fruitset);
+    // console.log(fruits);
+    console.log(dedupedArray);
+  });
 })();
