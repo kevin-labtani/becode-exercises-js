@@ -50,6 +50,12 @@
     let randomNum2 = Math.floor(Math.random() * (max2 - min2 + 1)) + min;
 
     let birdName = birds[randomNum].name;
+    if (birds[randomNum].fem) {
+      birdName = "La " + birdName;
+    } else {
+      birdName = "Le " + birdName;
+    }
+
     let birdAdj = ArrayAdj[randomNum2];
     if (birds[randomNum].fem) {
       birdAdj += "e";
