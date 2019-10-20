@@ -10,5 +10,6 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  const message = "owned!";
+  document.querySelector("#target").textContent = message;
 })();

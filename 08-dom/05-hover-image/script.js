@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  const imageSource = document.querySelector("img").getAttribute("data-hover");
+  console.log(imageSource);
+
+  document.querySelector("img").addEventListener("mouseover", function(e) {
+    e.target.src = imageSource;
+  });
+  // const newImage = document.createElement("img");
+  // newImage.src = imageSource;
+  // // console.log(newImage);
+  // document.querySelector("#target").appendChild(newImage);
+  // document.querySelector("#source").remove();
 })();

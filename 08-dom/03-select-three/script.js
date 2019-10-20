@@ -10,5 +10,8 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  const message = "owned!";
+  document.querySelectorAll("p.target").forEach(el => {
+    el.textContent = message;
+  });
 })();
