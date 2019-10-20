@@ -10,5 +10,32 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  const createTable = document.createElement("table");
+  const createTableBody = document.createElement("tbody");
+  document.querySelector("#target").appendChild(createTable);
+  document.querySelector("table").appendChild(createTableBody);
+
+  for (let index = 0; index < 10; index++) {
+    document
+      .querySelector("tbody")
+      .appendChild(document.createElement("tr"))
+      .setAttribute("id", index + 1);
+  }
+
+  for (let index = 0; index < 10; index++) {
+    document
+      .querySelectorAll("tr")
+      .forEach(el =>
+        el
+          .appendChild(document.createElement("td"))
+          .setAttribute("id", index + 1)
+      );
+  }
+
+  for (let index = 0; index < 10; index++) {
+    document.querySelectorAll("td").forEach(function(el) {
+      el.textContent = el.id * el.parentElement.id;
+      el.style.border = "1px solid grey";
+    });
+  }
 })();

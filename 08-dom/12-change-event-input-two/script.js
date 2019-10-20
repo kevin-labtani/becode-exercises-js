@@ -10,5 +10,10 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  indicator = document.querySelector(".indicator");
+  document.querySelector("#pass-one").addEventListener("input", function(e) {
+    if (e.target.value.length >= 8 && e.target.value.match("(?=(.*?\\d){2})")) {
+      indicator.textContent = "ok";
+    }
+  });
 })();

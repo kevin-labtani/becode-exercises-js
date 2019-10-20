@@ -10,5 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  document.querySelector("button").addEventListener("click", function(e) {
+    password = document.querySelector("#pass-one");
+    confirmPassword = document.querySelector("#pass-two");
+    if (password.value !== confirmPassword.value) {
+      password.setAttribute("class", "error");
+      confirmPassword.setAttribute("class", "error");
+    }
+  });
 })();

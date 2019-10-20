@@ -23,9 +23,8 @@
     const imageSource = gallery[counter];
     document.querySelector("img").src = imageSource;
     counter += 1;
-    if (counter === 5) {
+    if (counter === gallery.length) {
       counter = 1;
     }
-    console.log(counter);
   });
 })();

@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  const createTable = document.createElement("table");
+  const createTableBody = document.createElement("tbody");
+  document.querySelector("#target").appendChild(createTable);
+  document.querySelector("table").appendChild(createTableBody);
+  for (let index = 0; index < 10; index++) {
+    document.querySelector("tbody").appendChild(document.createElement("tr"));
+  }
+  document.querySelectorAll("tr").forEach(function(node) {
+    node.textContent = "this is a row";
+    node.style.border = "1px solid lightblue";
+  });
 })();
