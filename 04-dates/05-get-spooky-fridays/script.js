@@ -22,6 +22,7 @@
     year = e.target.value;
     if (isNaN(year)) {
       alert("Merci de choisir une année!");
+      e.target.value = "";
     }
   });
 
