@@ -10,10 +10,32 @@
 // You will have time to focus on it later.
 
 (() => {
-    class Animal {
-        sayHello() {
-            return `${this.constructor.greeting}! I'm ${this.name}!`;
-        }
+  class Animal {
+    sayHello() {
+      return `${this.constructor.greeting}! I'm ${this.name}!`;
     }
-    // your code here
+  }
+  class Cat extends Animal {
+    constructor(name) {
+      super();
+      this.name = name;
+    }
+    static greeting = "Meow! Meow!";
+  }
+
+  class Dog extends Animal {
+    constructor(name) {
+      super();
+      this.name = name;
+    }
+    static greeting = "Bark! Bark!";
+  }
+
+  document.querySelector("button").addEventListener("click", function(e) {
+    doggie = new Dog("Wolfie");
+    console.log(doggie.sayHello());
+
+    Kitty = new Cat("Maru");
+    console.log(Kitty.sayHello());
+  });
 })();
