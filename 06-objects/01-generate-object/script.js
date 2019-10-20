@@ -10,5 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  document.querySelector("button").addEventListener("click", function(e) {
+    // lastname, firstname, age, city, country.
+    const me = {
+      lastname: "Labtani",
+      firstname: "Kevin",
+      age: 37,
+      city: "Nivelles",
+      country: "Belgique"
+    };
+    console.log(me);
+  });
 })();

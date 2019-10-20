@@ -10,21 +10,35 @@
 // You will have time to focus on it later.
 
 (() => {
-    const computers = [
-        {id: "0001", available: false, user: "leny", os: "macOS"},
-        {id: "0002", available: false, user: "Nicolas"},
-        {id: "0003"},
-        {id: "0004", os: "Windows"},
-        {id: "0005"},
-        {id: "0006", os: "macOS"},
-        {id: "0007"},
-        {id: "0008"},
-        {id: "0009", available: false, user: "Anthony"},
-    ];
-    const defaultProps = {
-        available: true,
-        os: "linux",
-        user: null,
-    };
-    // your code here
+  const computers = [
+    { id: "0001", available: false, user: "leny", os: "macOS" },
+    { id: "0002", available: false, user: "Nicolas" },
+    { id: "0003" },
+    { id: "0004", os: "Windows" },
+    { id: "0005" },
+    { id: "0006", os: "macOS" },
+    { id: "0007" },
+    { id: "0008" },
+    { id: "0009", available: false, user: "Anthony" }
+  ];
+  const defaultProps = {
+    available: true,
+    os: "linux",
+    user: null
+  };
+  document.querySelector("button").addEventListener("click", function(e) {
+    computers.forEach(function(computer) {
+      if (computer.available === undefined) {
+        computer.available = defaultProps.available;
+      }
+      if (computer.user === undefined) {
+        computer.user = defaultProps.user;
+      }
+      if (computer.os === undefined) {
+        computer.os = defaultProps.os;
+      }
+    });
+
+    console.log(computers);
+  });
 })();
