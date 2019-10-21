@@ -13,8 +13,20 @@
   // random generator stolen from stackoverflow
   // toString(16) turns the number into an hexadecimal value
   //  16777215 in decimal = FFFFFF in hex
-  let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  // let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  // document.querySelector("button").addEventListener("click", function(e) {
+  //   document.body.style.backgroundColor = color;
+  // });
+
+  // with rgb :
+  // generate random number for birds
   document.querySelector("button").addEventListener("click", function(e) {
-    document.body.style.backgroundColor = color;
+    const min = 0;
+    const max = 255;
+    const randR = Math.floor(Math.random() * (max - min + 1)) + min;
+    const randG = Math.floor(Math.random() * (max - min + 1)) + min;
+    const randB = Math.floor(Math.random() * (max - min + 1)) + min;
+    const rgbCol = `rgba( ${randR}, ${randG}, ${randB}, 1)`;
+    document.body.style.backgroundColor = rgbCol;
   });
 })();
