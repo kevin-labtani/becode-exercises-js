@@ -10,5 +10,32 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  document.querySelector("button").addEventListener("click", function(e) {
+    window.lib.getPosts().then(articles => {
+      articles.forEach(article => {
+        const id = article.id;
+        window.lib.getComments( id => {
+          article.comment = comment;
+        });
+      })
+    });
+    // .then(
+    //   article => {
+    //     console.log(article);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
+
+    // callback version
+    // window.lib.getPosts((err, articles) => {
+    //   articles.forEach((article, index) => {
+    //     window.lib.getComments(article.id, (error, comment) => {
+    //       article.comment = comment;
+    //     });
+    //   });
+    //   console.log(articles);
+    // });
+  });
 })();
