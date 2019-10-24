@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  let heroId;
+  document.querySelector("#hero-id").addEventListener("change", function(e) {
+    heroId = parseInt(e.target.value);
+  });
+
+  document.querySelector("button").addEventListener("click", async function(e) {
+    let response = await fetch(`http://localhost:3000/heroes/${heroId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8"
+      }
+    });
+    const data = await response.json();
+    console.log(data);
+    console.log(`response status: ${response.status}`);
+  });
 })();
