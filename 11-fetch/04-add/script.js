@@ -33,9 +33,9 @@
   document.querySelector("button").addEventListener("click", async function(e) {
     let newId;
 
-    const result = await fetch(`http://localhost:3000/heroes`);
-    if (result) {
-      const data = await result.json();
+    const answer = await fetch(`http://localhost:3000/heroes`);
+    if (answer) {
+      const data = await answer.json();
       newId = data.length + 1;
     } else {
       throw new Error("Unable to fetch heroes");
@@ -56,14 +56,8 @@
       body: JSON.stringify(newHero)
     });
 
-    const displayResult = await fetch(`http://localhost:3000/heroes`);
-    if (displayResult) {
-      const data = await displayResult.json();
-      newId = data.length + 1;
-      console.log(data);
-    } else {
-      throw new Error("Unable to fetch heroes");
-    }
+    let result = await response.json();
+    console.log(result);
   });
 })();
 
