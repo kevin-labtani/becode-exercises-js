@@ -10,5 +10,8 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  document.querySelector("button").addEventListener("click", async function(e) {
+    const posts = await window.lib.getPosts();
+    console.log(posts);
+  });
 })();

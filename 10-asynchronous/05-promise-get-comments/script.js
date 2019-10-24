@@ -13,29 +13,12 @@
   document.querySelector("button").addEventListener("click", function(e) {
     window.lib.getPosts().then(articles => {
       articles.forEach(article => {
-        const id = article.id;
-        window.lib.getComments( id => {
+        window.lib.getComments(article.id).then(comment => {
           article.comment = comment;
+          // console.log(article)
         });
-      })
+      });
+      console.log(articles);
     });
-    // .then(
-    //   article => {
-    //     console.log(article);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
-
-    // callback version
-    // window.lib.getPosts((err, articles) => {
-    //   articles.forEach((article, index) => {
-    //     window.lib.getComments(article.id, (error, comment) => {
-    //       article.comment = comment;
-    //     });
-    //   });
-    //   console.log(articles);
-    // });
   });
 })();

@@ -10,5 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  document.querySelector("button").addEventListener("click", async function(e) {
+    const articles = await window.lib.getPosts();
+    articles.forEach(async article => {
+      const comment = await window.lib.getComments(article.id);
+      article.comment = comment;
+      // console.log(article)
+    });
+    console.log(articles);
+  });
 })();
