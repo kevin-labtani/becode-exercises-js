@@ -12,9 +12,37 @@
 (() => {
   const target = document.querySelector("#target");
 
+  let heroId = -1;
+
+  const createHero = hero => {
+    const list = document.createElement("li");
+    list.setAttribute("class", "hero");
+    target.appendChild(list);
+
+    const heading = document.createElement("h4");
+    heading.setAttribute("class", "title");
+    list.appendChild(heading);
+
+    const str = document.createElement("strong");
+    str.setAttribute("class", "name");
+    str.textContent = hero.name;
+    heading.appendChild(str);
+
+    const emphasis = document.createElement("em");
+    emphasis.setAttribute("class", "alter-ego");
+    emphasis.textContent = hero.alterEgo;
+    heading.appendChild(emphasis);
+
+    const parag = document.createElement("p");
+    parag.setAttribute("class", "powers");
+    parag.textContent = hero.abilities.join(", ");
+    list.appendChild(parag);
+  };
+
   document.querySelector("#hero-id").addEventListener("change", function(e) {
     heroId = parseInt(e.target.value);
   });
+
   document.querySelector("button").addEventListener("click", async function(e) {
     const response = await fetch(`http://localhost:3000/heroes`);
     if (!response) {
@@ -27,27 +55,6 @@
       throw new Error("Unable to fetch the hero for that id");
     }
 
-    const list = document.createElement("li");
-    list.setAttribute("class", "hero");
-    target.appendChild(list);
-
-    const heading = document.createElement("h4");
-    heading.setAttribute("class", "title");
-    list.appendChild(heading);
-
-    const str = document.createElement("strong");
-    str.setAttribute("class", "name");
-    str.textContent = chosenOne.name;
-    heading.appendChild(str);
-
-    const emphasis = document.createElement("em");
-    emphasis.setAttribute("class", "alter-ego");
-    emphasis.textContent = chosenOne.alterEgo;
-    heading.appendChild(emphasis);
-
-    const parag = document.createElement("p");
-    parag.setAttribute("class", "powers");
-    parag.textContent = chosenOne.abilities.join(", ");
-    list.appendChild(parag);
+    createHero(chosenOne);
   });
 })();
