@@ -30,9 +30,6 @@
           .appendChild(document.createElement("td"))
           .setAttribute("id", index + 1)
       );
-  }
-
-  for (let index = 0; index < 10; index++) {
     document.querySelectorAll("td").forEach(function(el) {
       el.textContent = el.id * el.parentElement.id;
       el.style.border = "1px solid grey";
