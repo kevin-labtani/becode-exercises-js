@@ -28,13 +28,13 @@
   };
   document.querySelector("button").addEventListener("click", function(e) {
     computers.forEach(function(computer) {
-      if (computer.available === undefined) {
+      if (!computer.available) {
         computer.available = defaultProps.available;
       }
-      if (computer.user === undefined) {
+      if (!computer.user) {
         computer.user = defaultProps.user;
       }
-      if (computer.os === undefined) {
+      if (!computer.os) {
         computer.os = defaultProps.os;
       }
     });
@@ -42,3 +42,16 @@
     console.log(computers);
   });
 })();
+
+// valeriya's husband
+// run.addEventListener("click", e => {
+//   computers.map(item => {
+//     Object.keys(defaultProps).forEach(name => {
+//       if (!item.hasOwnProperty(name)) {
+//         item[name] = defaultProps[name];
+//       }
+//     });
+//   });
+//   console.log(computers);
+// });
+
