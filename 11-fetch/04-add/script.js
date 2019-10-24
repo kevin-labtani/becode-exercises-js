@@ -10,9 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
+  let heroName;
+  let heroPowers;
+  let heroAlt;
+
   document.querySelector("#hero-name").addEventListener("change", function(e) {
     heroName = e.target.value;
   });
+
   document
     .querySelector("#hero-alter-ego")
     .addEventListener("change", function(e) {
@@ -26,7 +31,15 @@
     });
 
   document.querySelector("button").addEventListener("click", async function(e) {
-    let newId = 10;
+    let newId;
+
+    const result = await fetch(`http://localhost:3000/heroes`);
+    if (result) {
+      const data = await result.json();
+      newId = data.length + 1;
+    } else {
+      throw new Error("Unable to fetch heroes");
+    }
 
     let newHero = {
       id: newId,
@@ -49,7 +62,7 @@
       newId = data.length + 1;
       console.log(data);
     } else {
-      throw new Error("Unable to fetch heroeos");
+      throw new Error("Unable to fetch heroes");
     }
   });
 })();
