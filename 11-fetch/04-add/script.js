@@ -10,9 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
+  // hero creation
   let heroName;
   let heroPowers;
   let heroAlt;
+  let newHero;
 
   document.querySelector("#hero-name").addEventListener("change", function(e) {
     heroName = e.target.value;
@@ -30,8 +32,16 @@
       heroPowers = e.target.value.split(",");
     });
 
+  const createHero = (newId, heroName, heroAlt, heroPowers) => {
+    newHero = {
+      id: newId,
+      name: heroName,
+      alterEgo: heroAlt,
+      abilities: heroPowers
+    };
+  };
+
   document.querySelector("button").addEventListener("click", async function(e) {
-    
     // get an id to assign to the new hero
     let newId;
     const answer = await fetch(`http://localhost:3000/heroes`);
@@ -39,15 +49,10 @@
       const data = await answer.json();
       newId = data.length + 1;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
-    let newHero = {
-      id: newId,
-      name: heroName,
-      alterEgo: heroAlt,
-      abilities: heroPowers
-    };
+    createHero(newId, heroName, heroAlt, heroPowers);
 
     let response = await fetch("http://localhost:3000/heroes", {
       method: "POST",
@@ -61,22 +66,3 @@
     console.log(result);
   });
 })();
-
-// example
-// (async () => {
-//   let user = {
-//     name: "John",
-//     surname: "Smith"
-//   };
-
-//   let response = await fetch("/article/fetch/post/user", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8"
-//     },
-//     body: JSON.stringify(user)
-//   });
-
-//   let result = await response.json();
-//   alert(result.message);
-// })();

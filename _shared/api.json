@@ -116,6 +116,15 @@
         "ezdzede",
         " dezdede"
       ]
+    },
+    {
+      "id": 14,
+      "name": "test",
+      "alterEgo": "alsotest",
+      "abilities": [
+        "meat",
+        " potatoes"
+      ]
     }
   ]
 }
