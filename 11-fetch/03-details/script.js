@@ -42,7 +42,7 @@
     list.appendChild(parag);
   };
 
-  document.querySelector("button").addEventListener("click", async function(e) {
+  const makeRequest = async e => {
     const response = await fetch(`http://localhost:3000/heroes`);
 
     try {
@@ -52,5 +52,9 @@
     } catch (error) {
       console.log(error);
     }
-  });
+  };
+
+  document
+    .querySelector("button")
+    .addEventListener("click", e => makeRequest());
 })();

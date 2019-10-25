@@ -10,7 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-  // hero creation
+  // fetch data to create hero
   let heroName;
   let heroPowers;
   let heroAlt;
@@ -32,6 +32,7 @@
       heroPowers = e.target.value.split(",");
     });
 
+  // create hero
   const createHero = (newId, heroName, heroAlt, heroPowers) => {
     newHero = {
       id: newId,
@@ -41,7 +42,7 @@
     };
   };
 
-  document.querySelector("button").addEventListener("click", async function(e) {
+  const makeRequest = async e => {
     // get an id to assign to the new hero
     let newId;
     const answer = await fetch(`http://localhost:3000/heroes`);
@@ -64,5 +65,9 @@
 
     let result = await response.json();
     console.log(result);
-  });
+  };
+
+  document
+    .querySelector("button")
+    .addEventListener("click", e => makeRequest());
 })();

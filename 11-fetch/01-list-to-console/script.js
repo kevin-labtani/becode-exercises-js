@@ -10,14 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-  document.querySelector("button").addEventListener("click", async function(e) {
-    const response = await fetch(`http://localhost:3000/heroes`);
+  const button = document.querySelector("button");
 
+  const makeRequest = async e => {
     try {
+      const response = await fetch(`http://localhost:3000/heroes`);
       const data = await response.json();
       console.log(data);
     } catch (error) {
       console.log(error);
     }
-  });
+  };
+
+  button.addEventListener("click", e => makeRequest());
 })();

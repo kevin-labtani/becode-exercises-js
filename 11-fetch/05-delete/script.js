@@ -15,7 +15,7 @@
     heroId = parseInt(e.target.value);
   });
 
-  document.querySelector("button").addEventListener("click", async function(e) {
+  const makeRequest = async e => {
     try {
       let response = await fetch(`http://localhost:3000/heroes/${heroId}`, {
         method: "DELETE",
@@ -34,5 +34,9 @@
     } catch (error) {
       console.log(`Something went wrong: ${error}`);
     }
-  });
+  };
+
+  document
+    .querySelector("button")
+    .addEventListener("click", e => makeRequest());
 })();

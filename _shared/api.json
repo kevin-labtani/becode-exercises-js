@@ -119,11 +119,20 @@
     },
     {
       "id": 14,
-      "name": "test",
-      "alterEgo": "alsotest",
+      "name": "outside",
+      "alterEgo": "inside",
       "abilities": [
-        "meat",
-        " potatoes"
+        "in",
+        " out"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "test",
+      "alterEgo": "ffffff",
+      "abilities": [
+        "fefe",
+        " zededze"
       ]
     }
   ]
