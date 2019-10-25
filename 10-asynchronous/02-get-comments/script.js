@@ -12,8 +12,8 @@
   document.querySelector("button").addEventListener("click", function(e) {
     window.lib.getPosts((err, articles) => {
       articles.forEach((article, index) => {
-        window.lib.getComments(article.id, (error, comment) => {
-          article.comment = comment;
+        window.lib.getComments(article.id, (error, comments) => {
+          article.comments = comments;
         });
       });
       console.log(articles);
