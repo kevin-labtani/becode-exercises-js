@@ -31,14 +31,15 @@
     });
 
   document.querySelector("button").addEventListener("click", async function(e) {
+    
+    // get an id to assign to the new hero
     let newId;
-
     const answer = await fetch(`http://localhost:3000/heroes`);
-    if (answer) {
+    try {
       const data = await answer.json();
       newId = data.length + 1;
-    } else {
-      throw new Error("Unable to fetch heroes");
+    } catch (error) {
+      console.log(error)
     }
 
     let newHero = {

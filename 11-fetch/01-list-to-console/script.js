@@ -12,11 +12,12 @@
 (() => {
   document.querySelector("button").addEventListener("click", async function(e) {
     const response = await fetch(`http://localhost:3000/heroes`);
-    if (response) {
+
+    try {
       const data = await response.json();
       console.log(data);
-    } else {
-      throw new Error("Unable to fetch heroeos");
+    } catch (error) {
+      console.log(error);
     }
   });
 })();

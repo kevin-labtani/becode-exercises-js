@@ -16,14 +16,23 @@
   });
 
   document.querySelector("button").addEventListener("click", async function(e) {
-    let response = await fetch(`http://localhost:3000/heroes/${heroId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8"
+    try {
+      let response = await fetch(`http://localhost:3000/heroes/${heroId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8"
+        }
+      });
+
+      if (response.status === 200) {
+        const data = await response.json();
+        console.log(data);
+        console.log(`response status: ${response.status}`);
+      } else {
+        throw new Error("There's no hero for this id");
       }
-    });
-    const data = await response.json();
-    console.log(data);
-    console.log(`response status: ${response.status}`);
+    } catch (error) {
+      console.log(`Something went wrong: ${error}`);
+    }
   });
 })();

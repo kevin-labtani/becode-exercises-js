@@ -12,7 +12,10 @@
 (() => {
   const target = document.querySelector("#target");
 
-  let heroId = -1;
+  let heroId;
+  document.querySelector("#hero-id").addEventListener("change", function(e) {
+    heroId = parseInt(e.target.value);
+  });
 
   const createHero = hero => {
     const list = document.createElement("li");
@@ -39,22 +42,15 @@
     list.appendChild(parag);
   };
 
-  document.querySelector("#hero-id").addEventListener("change", function(e) {
-    heroId = parseInt(e.target.value);
-  });
-
   document.querySelector("button").addEventListener("click", async function(e) {
     const response = await fetch(`http://localhost:3000/heroes`);
-    if (!response) {
-      throw new Error("Unable to fetch heroes");
-    }
-    const data = await response.json();
-    const chosenOne = data.find(element => element.id === heroId);
 
-    if (!chosenOne) {
-      throw new Error("Unable to fetch the hero for that id");
+    try {
+      const data = await response.json();
+      const chosenOne = data.find(element => element.id === heroId);
+      createHero(chosenOne);
+    } catch (error) {
+      console.log(error);
     }
-
-    createHero(chosenOne);
   });
 })();

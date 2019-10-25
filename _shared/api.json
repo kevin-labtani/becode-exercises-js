@@ -91,6 +91,31 @@
         "dedzed",
         " dezdze"
       ]
+    },
+    {
+      "id": 11,
+      "name": "dazd",
+      "alterEgo": "dazdazd",
+      "abilities": [
+        "azdzda"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "dezdzed",
+      "alterEgo": "dazdazdedezdze",
+      "abilities": [
+        "ezdzede"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "dzedzd",
+      "alterEgo": "dazdadzedezdedezdze",
+      "abilities": [
+        "ezdzede",
+        " dezdede"
+      ]
     }
   ]
 }
