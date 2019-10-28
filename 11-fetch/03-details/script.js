@@ -48,7 +48,11 @@
     try {
       const data = await response.json();
       const chosenOne = data.find(element => element.id === heroId);
-      createHero(chosenOne);
+      if (chosenOne) {
+        createHero(chosenOne);
+      } else {
+        throw new Error("No hero found for this id");
+      }
     } catch (error) {
       console.log(error);
     }
