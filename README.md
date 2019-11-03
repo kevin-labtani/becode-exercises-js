@@ -16,10 +16,6 @@ Le projet est réalisé sur base des [instructions données](https://github.com/
 
 Projet réalisé entièrement en JS
 
-## Progression
-
-Projet terminé au 25 Septembre 2019
-
 ## Remerciements
 
 - [BeCode](https://www.becode.org/) pour la formation
